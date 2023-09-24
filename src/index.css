@@ -122,7 +122,7 @@ select {
 /* START: Home styles */
 
 .home__text-container {
-  @apply flex flex-col items-start justify-start gap-y-2.5 text-grey-9;
+  @apply max-sm:items-center flex flex-col items-start justify-start gap-y-2.5 text-grey-9;
 }
 
 .home__filters {
