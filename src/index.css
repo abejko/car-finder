@@ -1,0 +1,327 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800;900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Manrope", sans-serif;
+}
+
+select {
+  background: url("./assets/arrow-down.svg") no-repeat;
+  background-position: calc(100% - 0.75rem) center !important;
+  -moz-appearance: none !important;
+  -webkit-appearance: none !important;
+  appearance: none !important;
+  padding-right: 2rem !important;
+}
+
+/* START: General styles */
+/* .max-width {
+  @apply max-w-[1440px] mx-auto;
+} */
+
+.container {
+  @apply max-w-[1440px] mx-auto  lg:px-16 px-4;
+}
+
+.padding-x {
+  @apply sm:px-16 px-6;
+}
+
+.padding-y {
+  @apply py-4;
+}
+
+.flex-center {
+  @apply flex items-center justify-center;
+}
+
+.flex-between {
+  @apply flex justify-between items-center;
+}
+
+.custom-btn {
+  @apply flex flex-row justify-center items-center py-3 px-6 outline-none;
+}
+
+.noscroll {
+  @apply fixed overflow-y-scroll w-full;
+}
+
+/* END: General styles */
+
+/* START: Header styles */
+.header {
+  @apply bg-grey-8 w-full relative z-[9999] h-[72px] flex;
+}
+
+.logo {
+  @apply flex items-center flex-initial text-xl text-white font-medium;
+}
+
+.icon {
+  @apply hover:cursor-pointer text-3xl text-white;
+}
+
+.open__icon {
+  @apply lg:hidden;
+}
+.close__icon {
+  @apply lg:hidden;
+}
+
+.nav {
+  @apply fixed lg:static top-[72px]  bg-grey-1 w-full h-full  lg:bg-transparent lg:flex flex-col  lg:flex-row items-center flex-1 text-base lg:font-bold min-w-min z-20 transition-all duration-200 ease-out-expo;
+}
+
+.nav__left {
+  @apply bg-white rounded-[4px] lg:bg-transparent lg:flex-1 visible  lg:flex flex-col lg:flex-row lg:items-center m-4 lg:ml-16 lg:m-0 lg:justify-start lg:gap-6 min-w-fit;
+}
+.nav__right {
+  @apply bg-white rounded-[4px] lg:bg-transparent lg:flex-1  lg:flex flex-col lg:flex-row lg:items-center m-4 lg:justify-end lg:gap-6 lg:px-6 mt-4 lg:m-0;
+}
+
+.nav__btn {
+  @apply text-grey-9 lg:text-white  lg:hover:text-grey-9 rounded lg:hover:bg-white lg:px-3 transition-all duration-100 ease-linear;
+}
+
+.favourites__icon {
+  @apply flex  lg:text-2xl  flex-1  lg:hover:text-grey-9 lg:hover:bg-white p-3 rounded transition-all duration-100 ease-linear;
+}
+
+/* END: Header styles */
+
+/* START: Hero styles */
+.hero {
+  @apply hidden sm:block sm:relative z-0  bg-white;
+}
+
+.hero__title {
+  @apply 2xl:text-[60px] sm:text-[40px]   text-[40px] font-medium  sm:px-16 sm:pt-10 sm:pb-5 text-grey-9 leading-[1.1];
+}
+
+.hero__subtitle {
+  @apply text-[1.2rem]  sm:text-[15px] pl-10 sm:px-16 text-grey-9 font-light;
+}
+
+.hero__image-container {
+  @apply hidden lg:flex-1 pt-[8rem] lg:flex  w-full  bg-grey-1 mt-[3rem];
+}
+
+.hero__image {
+  @apply flex relative lg:w-full w-[90%] lg:h-full  h-[590px] z-0 mt-[-3rem];
+}
+
+/* END: Hero styles */
+
+/* START: Home styles */
+
+.home__text-container {
+  @apply flex flex-col items-start justify-start gap-y-2.5 text-grey-9;
+}
+
+.home__filters {
+  @apply mt-12 w-full flex-between items-center flex-wrap gap-5;
+}
+
+.home__filter-container {
+  @apply flex justify-start flex-wrap items-center gap-2 z-0;
+}
+
+.home__cars-wrapper {
+  @apply grid 2xl:grid-cols-4 xl:grid-cols-3 md:grid-cols-2 grid-cols-1 w-full gap-8 pt-14;
+}
+
+.home__error-container {
+  @apply mt-16 flex justify-center items-center flex-col gap-2;
+}
+/* END: Home styles */
+
+/* START: searchbar styles */
+.searchbar {
+  @apply flex items-center justify-start max-sm:flex-col w-full relative max-sm:gap-4 max-w-3xl gap-4;
+}
+
+.searchbar__item {
+  @apply flex-1 max-sm:w-full flex justify-start items-center relative;
+}
+
+.searchbar__open {
+  @apply sm:hidden  w-full bg-grey-8 h-[48px] rounded-md;
+}
+
+.searchbar__input {
+  @apply w-full h-[48px] pl-4   outline-none text-sm bg-white border  border-solid border-grey-4 rounded-md;
+}
+.searchbar__button {
+  @apply w-full h-[48px]  outline-none text-sm bg-primary  rounded-md hover:bg-blue-4;
+}
+
+/* CSS */
+
+/* END: searchbar styles */
+
+/* START: search manufacturer styles */
+.search-manufacturer {
+  @apply flex-1 max-sm:w-full flex justify-start items-center;
+}
+
+.search-manufacturer__input {
+  @apply w-full h-[48px] pl-12 p-4 max-sm:rounded-full  outline-none cursor-pointer text-sm;
+}
+
+.search-manufacturer__options {
+  @apply absolute mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm;
+}
+
+.search-manufacturer__option {
+  @apply cursor-default select-none py-2 pl-10 pr-4;
+}
+
+/* END: search manufacturer styles */
+
+/* START: Car Card styles */
+.car-card {
+  @apply relative flex flex-col p-6 justify-center items-start text-grey-9 bg-grey-1 hover:bg-white hover:shadow-md rounded-xl;
+}
+
+.car-card__favourites-icon-line {
+  @apply p-3 bg-white rounded-full absolute top-3 right-3 hover:cursor-pointer text-2xl  z-[40];
+}
+.car-card__favourites-icon-filled {
+  @apply p-3 bg-white rounded-full  absolute top-3 right-3 hover:cursor-pointer text-2xl text-grey-8  z-[100];
+}
+
+.car-card__content {
+  @apply w-full flex justify-between items-start gap-2;
+}
+
+.car-card__content-title {
+  @apply text-[22px] leading-[26px] font-bold capitalize;
+}
+
+.car-card__price {
+  @apply flex mt-6 text-[32px] leading-[38px] font-extrabold;
+}
+
+.car-card__price-dollar {
+  @apply self-start text-[14px] leading-[17px] font-semibold;
+}
+
+.car-card__price-day {
+  @apply self-end text-[14px] leading-[17px] font-medium;
+}
+
+.car-card__image {
+  @apply relative w-full h-40 my-3 object-contain;
+}
+
+.car-card__icon-container {
+  @apply flex group-hover:invisible w-full justify-between text-grey-9;
+}
+
+.car-card__icon {
+  @apply flex flex-col justify-center items-center gap-2;
+}
+
+.car-card__icon-text {
+  @apply text-[14px] leading-[17px];
+}
+
+.car-card__btn-container {
+  @apply hidden group-hover:flex absolute bottom-0 w-full z-10;
+}
+/* END: Car Card styles */
+
+/* START: Car Details styles */
+.car-details {
+  @apply relative pt-3 lg:pt-6 pb-[5rem] w-full transform  bg-white  text-left  transition-all flex flex-col  lg:flex-row gap-10 lg:gap-20;
+}
+.car-details__content {
+  @apply lg:flex-initial  lg:w-[25rem] flex flex-col gap-2;
+}
+
+.navigation__link {
+  @apply flex justify-between pt-[3rem] lg:pt-[8rem];
+}
+
+.backButton_link {
+  @apply text-secondary;
+}
+
+.car-details__image {
+  @apply relative w-full h-[30rem] bg-cover bg-center rounded-lg bg-grey-4 flex justify-center;
+}
+/* END: Car Details styles */
+
+/* START: Car Favorites styles */
+.car-favorites {
+  @apply relative pt-3 lg:pt-6 pb-[5rem] w-full transform  bg-white  text-left  transition-all flex flex-col  lg:flex-row gap-10 lg:gap-14 max-w-fit    lg:max-w-fit;
+}
+
+.car-favorites__title {
+  @apply text-3xl pb-6;
+}
+.car-favorites__content {
+  @apply lg:flex-grow-0 lg:flex-shrink-0 basis-[40%] lg:w-[25rem] flex flex-col gap-2;
+}
+
+.favorites__navigation-link {
+  @apply flex justify-between pt-[2rem] lg:pt-[4rem];
+}
+
+.backButton_link {
+  @apply text-secondary;
+}
+
+.car-favorites__image {
+  @apply relative  lg:w-[30rem] h-[15rem] bg-cover bg-center rounded-lg bg-grey-4 flex justify-center;
+}
+.page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* END: Car Favorites styles */
+
+/* START: Footer styles */
+.footer {
+  @apply flex flex-col text-grey-9  mt-10 border-t border-grey-1 max-w-[1440px] mx-auto;
+}
+
+.footer__links-container {
+  @apply flex max-md:flex-col flex-wrap justify-between gap-5 sm:px-16 px-6 py-10;
+}
+
+.footer__rights {
+  @apply flex flex-col justify-start items-start gap-6;
+}
+
+.footer__links {
+  @apply flex-1 w-full flex md:justify-end flex-wrap max-md:mt-10 gap-20;
+}
+
+.footer__link {
+  @apply flex flex-col gap-6 text-base min-w-[170px];
+}
+
+.footer__copyrights {
+  @apply flex justify-between items-center flex-wrap mt-10 border-t border-grey-9 sm:px-16 px-6 py-10;
+}
+
+.footer__copyrights-link {
+  @apply flex-1 flex sm:justify-end justify-center max-sm:mt-4 gap-10;
+}
+
+.relative-footer {
+  position: relative;
+  bottom: 0;
+}
+
+/* END: Footer styles */
